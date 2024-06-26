@@ -1,0 +1,41 @@
+<!-- customize_portfolio.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Customize Portfolio</h2>
+
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    
+    <!-- Bio -->
+    <div class="form-group">
+      <label for="id_bio">Bio:</label>
+      <textarea id="id_bio" name="bio" class="form-control">{{ user_profile.bio }}</textarea>
+    </div>
+    
+    <!-- Skills -->
+    <div class="form-group">
+      <label for="id_skills">Skills:</label>
+      <input type="text" id="id_skills" name="skills" class="form-control" value="{{ user_profile.skills }}">
+    </div>
+    
+    <!-- Contact Phone -->
+    <div class="form-group">
+      <label for="id_contact_phone">Contact Phone:</label>
+      <input type="text" id="id_contact_phone" name="contact_phone" class="form-control" value="{{ user_profile.contact_phone }}">
+    </div>
+    
+    <!-- Contact Email -->
+    <div class="form-group">
+      <label for="id_contact_email">Contact Email:</label>
+      <input type="email" id="id_contact_email" name="contact_email" class="form-control" value="{{ user_profile.contact_email }}">
+    </div>
+    
+    <!-- Other fields for portfolio customization -->
+    <!-- Example: Project Showcases, Work Experience, Certifications, etc. -->
+    
+    <!-- Submit button -->
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+  </form>
+{% endblock %}

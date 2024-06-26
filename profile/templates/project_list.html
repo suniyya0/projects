@@ -1,0 +1,14 @@
+<!-- profile/templates/profile/project_list.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Project List</h1>
+  <ul>
+    {% for project in projects %}
+      <li><a href="{% url 'project_detail' pk=project.pk %}">{{ project.title }}</a></li>
+    {% empty %}
+      <li>No projects found.</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

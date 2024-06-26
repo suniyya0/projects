@@ -1,0 +1,10 @@
+<!-- profile/templates/profile/view_profile.html -->
+{% extends 'profile/base.html' %}
+<h1>{{ profile.user.username }}</h1>
+<p>{{ profile.bio }}</p>
+<h2>Projects:</h2>
+<ul>
+    {% for project in projects %}
+        <li>{{ project.title }}</li>
+    {% endfor %}
+</ul>

@@ -1,0 +1,17 @@
+<!-- profile/templates/profile/create_profile.html -->
+
+<!-- profile/templates/profile/create_profile.html -->
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Create Profile - My Django Project{% endblock %}
+
+{% block content %}
+    <h2>Create Profile</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save Profile</button>
+    </form>
+{% endblock %}
